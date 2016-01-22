@@ -6,7 +6,7 @@
     		$send_query = mysqli_query($connection, $query);
 
     		while ($row = mysqli_fetch_assoc($send_query)) {
-    			 "<a href='#' class='list-group-item'>{$row['cat_title']}</a>";
+    			 echo "<a href='#' class='list-group-item'>" . $row['cat_title'] . "</a>";
     		}
 
     	 ?>
