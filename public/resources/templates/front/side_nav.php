@@ -2,11 +2,13 @@
     <p class="lead">Shop Name</p>
     <div class="list-group">
     	<?php
+    		$query = "SELECT * FROM categories";
+    		$send_query = mysqli_query($connection, $query);
 
-    	
+    		while ($row = mysqli_fetch_assoc($send_query)) {
+    			 "<a href='#' class='list-group-item'>{$row['cat_title']}</a>";
+    		}
+
     	 ?>
-        <a href="category.html" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
     </div>
 </div>
