@@ -5,7 +5,7 @@
     		$query = "SELECT * FROM categories";
     		$send_query = mysqli_query($connection, $query);
 
-    		while ($row = mysqli_fetch_assoc($send_query)) {
+    		while ($row = fetch_array($send_query)) {
     			 echo "<a href='#' class='list-group-item'>" . $row['cat_title'] . "</a>";
     		}
 

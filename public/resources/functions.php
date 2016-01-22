@@ -20,4 +20,16 @@ function confirm($result) {
 }
 
 
+// This will prevent sql injections
+function escape_string($string) {
+	global $connection;
+	return mysqli_real_escape_string($connection, $string)
+}
+
+
+function fetch_array($result) {
+	return mysqli_fetch_array($result)
+}
+
+
 ?>
