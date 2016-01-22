@@ -11,5 +11,13 @@ function query($sql) {
 	return mysqli_query($connection, $sql)
 }
 
+function confirm($result) {
+	global $connection;
+
+	if(!$result) {
+		die("Query Failed" . mysqli_error($connection));
+	}
+}
+
 
 ?>
