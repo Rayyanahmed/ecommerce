@@ -65,11 +65,10 @@ echo $product;
 
 
 function get_categories() {
-	global $connection;
-	$query = "SELECT * FROM categories";
-	$send_query = mysqli_query($connection, $query);
-
-	while ($row = fetch_array($send_query)) {
+	// took out global $connection because query helper function takes care of that
+	$query = query("SELECT * FROM categories");
+	confirm($query);
+	while ($row = fetch_array($query)) {
 		 echo "<a href='#' class='list-group-item'>" . $row['cat_title'] . "</a>";
 	}
 }
