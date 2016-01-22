@@ -65,11 +65,14 @@ echo $product;
 
 
 function get_categories() {
-	// took out global $connection because query helper function takes care of that
-	$query = query("SELECT * FROM categories");
-	confirm($query);
-	while ($row = fetch_array($query)) {
-		 echo "<a href='#' class='list-group-item'>" . $row['cat_title'] . "</a>";
+// took out global $connection because query helper function takes care of that
+$query = query("SELECT * FROM categories");
+confirm($query);
+while ($row = fetch_array($query)) {
+$category_links = <<<DELIMETER
+	<a href='category.php' class='list-group-item'>{$row['cat_title']}</a>
+DELIMETER;
+echo $category_links;
 	}
 }
 
