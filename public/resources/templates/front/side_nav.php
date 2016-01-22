@@ -2,6 +2,7 @@
     <p class="lead">Shop Name</p>
     <div class="list-group">
     	<?php
+
     	
     	 ?>
         <a href="category.html" class="list-group-item">Category 1</a>
