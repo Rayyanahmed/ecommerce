@@ -1,7 +1,8 @@
 <?php 
 
-if($connection) {
-	echo "is connected";
+function redirect($location) {
+	header("Location: $location");
 }
+
 
 ?>
