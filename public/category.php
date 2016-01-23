@@ -26,7 +26,7 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-            <?php get_category_products($_GET['id']); ?>
+            <?php get_category_products(escape_string($_GET['id'])); ?>
 
         </div>
         <!-- /.row -->
