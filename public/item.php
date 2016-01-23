@@ -20,6 +20,7 @@ while($row = fetch_array($query)) {
     $title = $row['product_title'];
     $description = $row['product_description'];
     $short_description = $row['short_desc'];
+    $product_image = $row['product_image'];
 }
 
 ?>
@@ -31,7 +32,7 @@ while($row = fetch_array($query)) {
 <div class="row">
 
     <div class="col-md-7">
-       <img class="img-responsive" src="http://placehold.it/700x600" alt="">
+       <img class="img-responsive" src=<?php echo $product_image; ?> alt="">
 
     </div>
 
