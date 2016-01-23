@@ -131,7 +131,21 @@ echo $product_links;
 	}
 }
 
+function login_user() {
+	if(isset($_POST['submit'])) {
+		$username = escape_string($_POST['username']);
+		$password = escape_string($_POST['password']);
 
+		$query = "SELECT * FROM users WHERE username = " . $username . "AND password = " . $password . " ";
+		confirm($query);
+		// this function tells us how many queries returned
+		if (my_sqli_num_rows($query) == 0) {
+			redirect("login.php");
+		} else {
+			redirect("admin.php");
+		}
+	}
+}
 
 
  
