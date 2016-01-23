@@ -170,7 +170,13 @@ function login_user() {
 
 function send_message() {
 	if(isset($_POST['submit'])) {
-		echo "Submitted!";
+		$from_name     = $_POST['name'];
+		$subject       = $_POST['subject'];
+		$email         = $_POST['email'];
+		$message       = $_POST['message'];
+
+		$headers = "From: {$from_name} {$email}";
+		
 	}
 }
  
