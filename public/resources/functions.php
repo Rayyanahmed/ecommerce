@@ -170,13 +170,22 @@ function login_user() {
 
 function send_message() {
 	if(isset($_POST['submit'])) {
+		$to            = "someEmailAddress@gmail.com"
 		$from_name     = $_POST['name'];
 		$subject       = $_POST['subject'];
 		$email         = $_POST['email'];
 		$message       = $_POST['message'];
 
 		$headers = "From: {$from_name} {$email}";
-		
+
+		// This may not work because of potential spam
+		// Email providers dont like this, may need third party service
+		$result = mail($to, $subject, $message, $headers);
+		if (!$result) {
+			echo "ERROR";
+		} else {
+			echo "SENT";
+		}
 	}
 }
  
