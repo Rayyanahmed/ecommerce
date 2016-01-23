@@ -1,7 +1,12 @@
 <?php require_once("./resources/config.php"); ?>
 
 <?php include (TEMPLATE_FRONT . DS . "header.php"); ?>
+<?php 
 
+$_SESSION['product_id'];
+
+
+?>
     <!-- Page Content -->
     <div class="container">
 
