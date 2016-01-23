@@ -13,6 +13,8 @@ function set_message($msg) {
 }
 
 function display_message() {
+	// This will take up h2 space in admin page ONLY if $_SESSION['message'] isset
+	// It will unset as soon as the function is run again.
 	if(isset($_SESSION['message'])) {
 		echo $_SESSION['message'];
 		unset($_SESSION['message']);
@@ -160,6 +162,7 @@ function login_user() {
 			set_message('Your password and username are wrong');
 			redirect("login.php");
 		} else {
+			set_message("Welcome to admin " . $username);
 			redirect("admin");
 		}
 	}
