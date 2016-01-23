@@ -104,5 +104,33 @@ DELIMETER;
 echo $product_links;
 	}
 }
+
+// Add function to get all products to display on shop page
+
+
+function get_shop_products() {
+	// forgot to add this query function in the query string, need to have the actual query object before fetching
+	$query = query("SELECT * FROM products");
+	confirm($query);
+	while ($row = fetch_array($query)) {
+		$product_links = <<<DELIMETER
+<div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+        <img src="{$row['product_image']}" alt="">
+        <div class="caption">
+            <h3>{$row['product_title']}</h3>
+            <p>{$row['short_desc']}</p>
+            <p>
+                <a href="#" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
+            </p>
+        </div>
+    </div>
+</div>
+DELIMETER;
+echo $product_links;
+	}
+}
+
+
  
 ?>
