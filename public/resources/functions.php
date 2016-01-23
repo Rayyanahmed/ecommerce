@@ -4,6 +4,21 @@
 
 /*********************BACK END FUNCTIONS **************************/
 
+function set_message($msg) {
+	if(!empty($msg)) {
+		$_SESSION['message'] = $msg;
+	} else {
+		$msg = "";
+	}
+}
+
+function display_message() {
+	if(isset($_SESSION['message'])) {
+		echo $_SESSION['message'];
+		unset($_SESSION['message']);
+	}
+}
+
 function redirect($location) {
 	header("Location: $location");
 }
@@ -142,6 +157,7 @@ function login_user() {
 		// this function tells us how many queries returned
 		if (mysqli_num_rows($query) == 0) {
 			// figure out when to use relative paths vs absolute paths
+			set_message('Your password and username are wrong');
 			redirect("login.php");
 		} else {
 			redirect("admin");
