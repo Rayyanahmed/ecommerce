@@ -73,7 +73,7 @@
       <header>
             <h1 class="text-center">Login</h1>
         <div class="col-sm-4 col-sm-offset-5">         
-            <form class="" action="" method="post" enctype="multipart/form-data">
+            <form class="" action="" method="post">
                 <div class="form-group"><label for="">
                     username<input type="text" name="username" class="form-control"></label>
                 </div>
