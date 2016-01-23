@@ -1,7 +1,8 @@
 <?php require_once("./resources/config.php"); ?>
 
 <?php include (TEMPLATE_FRONT . DS . "header.php"); ?>
-
+    
+    <!-- This page is going to display ALL of our products regardless of category -->
     <!-- Page Content -->
     <div class="container">
 
