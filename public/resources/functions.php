@@ -140,6 +140,7 @@ function login_user() {
 		confirm($query);
 		// this function tells us how many queries returned
 		if (my_sqli_num_rows($query) == 0) {
+			// figure out when to use relative paths vs absolute paths
 			redirect("login.php");
 		} else {
 			redirect("admin.php");
