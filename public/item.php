@@ -16,7 +16,9 @@ $query = query(" SELECT * FROM products WHERE product_id =" . escape_string($_GE
 confirm($query);
 
 while($row = fetch_array($query)):
-
+// Notes: Because we only care about fetching one product, I'm sure we can store all the models
+    // attributes in seperate variables and then just echo the individual attribute variables
+    // throughout the DOM.
 ?>
 
 <div class="col-md-9">
