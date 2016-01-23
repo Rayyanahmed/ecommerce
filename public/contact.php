@@ -23,7 +23,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" >
+                    <form name="sentMessage" id="contactForm" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
