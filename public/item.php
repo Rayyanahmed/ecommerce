@@ -15,10 +15,11 @@
 $query = query(" SELECT * FROM products WHERE product_id =" . escape_string($_GET['id']) . " ");
 confirm($query);
 
-while($row = fetch_array($query)):
-// Notes: Because we only care about fetching one product, I'm sure we can store all the models
-    // attributes in seperate variables and then just echo the individual attribute variables
-    // throughout the DOM.
+while($row = fetch_array($query)) {
+    $title = $row['product_title'];
+    $description = $row['description'];
+}
+
 ?>
 
 <div class="col-md-9">
@@ -38,7 +39,7 @@ while($row = fetch_array($query)):
          
 
     <div class="caption-full">
-        <h4><a href="#">Javascript Course</a> </h4>
+        <h4><a href="#"><?php echo $title; ?></a> </h4>
         <hr>
         <h4 class=""><?php echo $row['product_price']; ?></h4>
 
@@ -206,7 +207,7 @@ while($row = fetch_array($query)):
 
 </div><!-- col-md-9 ends here -->
 
-<?php endwhile; ?>
+<?php // endwhile; goes here ?>
 
 </div>
     <!-- /.container -->
