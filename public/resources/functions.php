@@ -94,7 +94,7 @@ function get_category_products($category_id) {
                 <h3>{$row['product_title']}</h3>
                 <p>{$row['short_desc']}</p>
                 <p>
-                    <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                    <a href="#" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
                 </p>
             </div>
         </div>
