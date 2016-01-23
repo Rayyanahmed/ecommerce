@@ -168,9 +168,9 @@ function login_user() {
 	}
 }
 
-function send_message() {
+// Revisit this mail function and actually get it to work
+function send_message($to) {
 	if(isset($_POST['submit'])) {
-		$to            = "someEmailAddress@gmail.com"
 		$from_name     = $_POST['name'];
 		$subject       = $_POST['subject'];
 		$email         = $_POST['email'];
