@@ -38,10 +38,14 @@ if(isset($_GET['delete'])) {
 }
 
 function cart() {
-
+// Right now we are showing quantity from the database in the checking page, But we want to show it from 
+  // sessions
   foreach ($_SESSION as $name => $value) {
+
     if (is_int($value) && $value > 0) {
+
        if(substr($name, 0, 8) == "product_") {
+
        $query = query("SELECT * FROM products");
   confirm($query);
   while($row = fetch_array($query)) {
