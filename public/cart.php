@@ -2,10 +2,6 @@
 
 
 <?php 
-// First thing incoming is the GET request
-// Interesting thought, can I make an association array of cart_products, and that key will have a bunch of values 
-// if those values are greater than 0 then display those in the check out page. If they are less than one then delete that
-// Value. If when adding that value doesn't exist then set that value equal to one, otherwise increment by one.
 
 if(isset($_GET['add'])) {
   // Here we are building a cap according to how many products we have on hand
@@ -42,6 +38,11 @@ if(isset($_GET['delete'])) {
 }
 
 function cart() {
+
+  foreach ($_SESSION as $name => $value) {
+
+  }
+
   $query = query("SELECT * FROM products");
   confirm($query);
   while($row = fetch_array($query)) {
