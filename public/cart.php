@@ -54,7 +54,7 @@ function cart() {
             <tr>
                 <td>{$row['product_title']}</td>
                 <td>{$row['product_price']}</td>
-                <td>{$row['product_quantity']}</td>
+                <td>{$value}</td>
                 <td>2</td>
                 <td><a class="btn btn-warning" href="cart.php?remove={$row['product_id']}"><span class="glyphicon glyphicon-minus"></span></a>
                     <a class="btn btn-success" href="cart.php?add={$row['product_id']}"><span class="glyphicon glyphicon-plus"></span></a>
