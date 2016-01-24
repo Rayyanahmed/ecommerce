@@ -52,7 +52,7 @@
 
 <tr class="order-total">
 <th>Order Total</th>
-<td><strong><span class="amount">$3444</span></strong> </td>
+<td><strong><span class="amount">$<?php echo $_SESSION['item_total']; ?></span></strong> </td>
 </tr>
 
 
