@@ -37,4 +37,37 @@ if(isset($_GET['delete'])) {
   redirect("checkout.php");
 }
 
+function cart() {
+  $query = query("SELECT * FROM products");
+  confirm($query);
+  while($row = fetch_array($query)) {
+    $product = <<<DELIMETER
+      <table class="table table-striped">
+        <thead>
+          <tr>
+           <th>Product</th>
+           <th>Price</th>
+           <th>Quantity</th>
+           <th>Sub-total</th>
+     
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{$row['product_title']}</td>
+                <td>{$row['product_price']}</td>
+                <td>{$row['product_quantity']}</td>
+                <td>2</td>
+                <td><a href="cart.php?remove={$row['product_id']}">Remove</a></td>
+                <td><a href="cart.php?delete={$row['product_id']}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+DELIMETER;
+echo $product;
+  }
+}
+
+cart();
+
 ?>

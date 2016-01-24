@@ -39,6 +39,7 @@ if(isset($_SESSION['product_1'])) {
                 <td>3</td>
                 <td>2</td> <!-- Will dynamically code the product id later -->
                 <td><a href="cart.php?remove=1">Remove</a></td>
+                <td><a href="cart.php?delete=1">Delete</a></td>
             </tr>
         </tbody>
     </table>
