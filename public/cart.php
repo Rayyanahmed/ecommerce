@@ -40,10 +40,8 @@ if(isset($_GET['delete'])) {
 function cart() {
 
   foreach ($_SESSION as $name => $value) {
-
-  }
-
-  $query = query("SELECT * FROM products");
+    if(substr($name, 0, 8) == "product_") {
+       $query = query("SELECT * FROM products");
   confirm($query);
   while($row = fetch_array($query)) {
     $product = <<<DELIMETER
@@ -61,6 +59,8 @@ function cart() {
        
 DELIMETER;
 echo $product;
+    }
+  }
   }
 }
 
