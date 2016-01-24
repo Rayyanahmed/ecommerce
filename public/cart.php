@@ -31,7 +31,7 @@ if(isset($_GET['remove'])) {
 }
 
 
-if(isset($_GET['remove'])) {
+if(isset($_GET['delete'])) {
   $_SESSION['product_' . $_GET['delete']] = 0;
   redirect("checkout.php");
 }
