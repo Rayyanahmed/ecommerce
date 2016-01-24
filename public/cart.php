@@ -2,10 +2,6 @@
 
 
 <?php 
-// So far we have logic that dictates how many qty we can add to the cart, this taps into database
-// to double check, if the customer wants to go over the qty available they will get a message
-// However I should keep in mind once the customer actually purchases a product the database should be 
-// updated
 
 if(isset($_GET['add'])) {
   // Here we are building a cap according to how many products we have on hand
@@ -53,13 +49,16 @@ function cart() {
        $query = query("SELECT * FROM products WHERE product_id = " . $id . " ");
   confirm($query);
   while($row = fetch_array($query)) {
+
+   $sub_total = $row['product_price'] * $value;
+
     $product = <<<DELIMETER
       
             <tr>
                 <td>{$row['product_title']}</td>
                 <td>{$row['product_price']}</td>
                 <td>{$value}</td>
-                <td>2</td>
+                <td>{$sub_total}</td>
                 <td><a class="btn btn-warning" href="cart.php?remove={$row['product_id']}"><span class="glyphicon glyphicon-minus"></span></a>
                     <a class="btn btn-success" href="cart.php?add={$row['product_id']}"><span class="glyphicon glyphicon-plus"></span></a>
                     <a class="btn btn-danger" href="cart.php?delete={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a>
