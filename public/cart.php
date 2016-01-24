@@ -48,8 +48,8 @@ function cart() {
                 <td>{$row['product_price']}</td>
                 <td>{$row['product_quantity']}</td>
                 <td>2</td>
-                <td><a href="cart.php?remove={$row['product_id']}">Remove</a></td>
-                <td><a href="cart.php?delete={$row['product_id']}">Delete</a></td>
+                <td><span class="glyphicon glyphicon-minus"></span><a class="btn btn-warning" href="cart.php?remove={$row['product_id']}">Remove</a></td>
+                <td><a class="btn btn-danger" href="cart.php?delete={$row['product_id']}">Delete</a></td>
             </tr>
        
 DELIMETER;
