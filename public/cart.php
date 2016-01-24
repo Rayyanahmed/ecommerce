@@ -21,6 +21,7 @@ if(isset($_GET['add'])) {
 
 }
 
+// Removing a single product
 if(isset($_GET['remove'])) {
   $_SESSION['product_' . $_GET['remove']] -= 1;
   if($_SESSION['product_'. $_GET['remove']] < 1) {
@@ -30,9 +31,9 @@ if(isset($_GET['remove'])) {
   }
 }
 
-
+// Deleting an entire product
 if(isset($_GET['delete'])) {
-  $_SESSION['product_' . $_GET['delete']] = 0;
+  $_SESSION['product_' . $_GET['delete']] = '0';
   redirect("checkout.php");
 }
 
