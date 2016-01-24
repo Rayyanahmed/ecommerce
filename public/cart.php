@@ -2,6 +2,10 @@
 
 
 <?php 
+// So far we have logic that dictates how many qty we can add to the cart, this taps into database
+// to double check, if the customer wants to go over the qty available they will get a message
+// However I should keep in mind once the customer actually purchases a product the database should be 
+// updated
 
 if(isset($_GET['add'])) {
   // Here we are building a cap according to how many products we have on hand
