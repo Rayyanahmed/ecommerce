@@ -25,6 +25,8 @@ if(isset($_GET['add'])) {
 if(isset($_GET['remove'])) {
   $_SESSION['product_' . $_GET['remove']] -= 1;
   if($_SESSION['product_'. $_GET['remove']] < 1) {
+    unset($_SESSION['total_quantity']);
+    unset($_SESSION['item_total']);
     redirect("checkout.php");
   } else {
     redirect("checkout.php");
@@ -34,6 +36,8 @@ if(isset($_GET['remove'])) {
 // Deleting an entire product
 if(isset($_GET['delete'])) {
   $_SESSION['product_' . $_GET['delete']] = '0';
+   unset($_SESSION['total_quantity']);
+    unset($_SESSION['item_total']);
   redirect("checkout.php");
 }
 
