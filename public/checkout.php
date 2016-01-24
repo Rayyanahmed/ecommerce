@@ -1,7 +1,15 @@
 <?php require_once("./resources/config.php"); ?>
 
 <?php include (TEMPLATE_FRONT . DS . "header.php"); ?>
-<?php echo $_SESSION['product_1']; ?>
+<?php 
+
+// Testing purposes. This will show however many products at hand
+// Top left hand side... when we click remove product_1 will be decremented by 1
+if(isset($_SESSION['product_1'])) {
+  echo $_SESSION['product_1'];
+}
+
+ ?>
 <h4 class="text-center bg-danger"><?php display_message(); ?></h4>
     <!-- Page Content -->
     <div class="container">
