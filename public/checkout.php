@@ -29,8 +29,8 @@
                 <td>apple</td>
                 <td>$23</td>
                 <td>3</td>
-                <td>2</td>
-              
+                <td>2</td> <!-- Will dynamically code the product id later -->
+                <td><a href="cart.php?remove=1">Remove</a></td>
             </tr>
         </tbody>
     </table>
