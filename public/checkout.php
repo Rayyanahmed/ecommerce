@@ -2,7 +2,7 @@
 
 <?php include (TEMPLATE_FRONT . DS . "header.php"); ?>
 <?php echo $_SESSION['product_1']; ?>
-<?php display_message(); ?>
+<h4 class="text-center bg-danger"><?php display_message(); ?></h4>
     <!-- Page Content -->
     <div class="container">
 
