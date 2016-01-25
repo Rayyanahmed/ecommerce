@@ -4,7 +4,14 @@
 <?php 
 
 if(isset($_GET['tx'])) {
-	// Paypal will send a GET request back if transaction works
+	// We can cache values as well back from get request
+	$amount = $_GET['amt'];
+	$currency = $_GET['cc'];
+	$transaction = $_GET['tx'];
+	$status = $_GET['st'];
+} else {
+	// If those values are set then good, otherwise redirect to index
+	redirect("index.php")
 }
 
 
