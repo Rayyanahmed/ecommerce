@@ -4,14 +4,15 @@
 <?php 
 
 if(isset($_GET['tx'])) {
-	// We can cache values as well back from get request
 	$amount = $_GET['amt'];
 	$currency = $_GET['cc'];
 	$transaction = $_GET['tx'];
 	$status = $_GET['st'];
+	// Create a query and insert this into database, and then you can 
+	// destroy your sessions so when user comes back to shopping cart there
+	// is nothing left
 } else {
-	// If those values are set then good, otherwise redirect to index
-	redirect("index.php")
+	redirect("index.php");
 }
 
 
