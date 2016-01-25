@@ -44,9 +44,9 @@ if(isset($_GET['delete'])) {
 function cart() {
   $total = 0;
   $_SESSION['total_quantity'] = 0;
-  $item_name = 1++; // Default
-  $item_number = 1++;
-  $amount = 1++;
+  $item_name = 1; // Default
+  $item_number = 1;
+  $amount = 1;
   $quantity = 1;
 
   foreach ($_SESSION as $name => $value) {
@@ -62,7 +62,7 @@ function cart() {
   while($row = fetch_array($query)) {
 
    $sub_total = $row['product_price'] * $value;
-
+   // Loop through the hidden inputs to add each dataset dynamically
     $product = <<<DELIMETER
       
             <tr>
@@ -75,10 +75,10 @@ function cart() {
                     <a class="btn btn-danger" href="cart.php?delete={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a>
                     </td>
             </tr>
-       <input type="hidden" name="item_name_{$item_name}" value="hat">
-       <input type="hidden" name="item_number_{$item_number}" value="hat"> 
-       <input type="hidden" name="amount_{$amount}" value="hat"> 
-       <input type="hidden" name="quantity_{$quantity}" value="hat"> 
+       <input type="hidden" name="item_name_{$item_name}" value="{$row['product_title']}">
+       <input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}"> 
+       <input type="hidden" name="amount_{$amount}" value="{$row['product_price']}"> 
+       <input type="hidden" name="quantity_{$quantity}" value="{$row['product_quantity']}"> 
 DELIMETER;
 echo $product;
   $item_name++; // Default
