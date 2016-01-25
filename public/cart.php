@@ -44,6 +44,11 @@ if(isset($_GET['delete'])) {
 function cart() {
   $total = 0;
   $_SESSION['total_quantity'] = 0;
+  $item_name = 1++; // Default
+  $item_number = 1++;
+  $amount = 1++;
+  $quantity = 1;
+
   foreach ($_SESSION as $name => $value) {
 
     if (is_int($value) && $value > 0) {
@@ -70,9 +75,16 @@ function cart() {
                     <a class="btn btn-danger" href="cart.php?delete={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a>
                     </td>
             </tr>
-       
+       <input type="hidden" name="item_name_{$item_name}" value="hat">
+       <input type="hidden" name="item_number_{$item_number}" value="hat"> 
+       <input type="hidden" name="amount_{$amount}" value="hat"> 
+       <input type="hidden" name="quantity_{$quantity}" value="hat"> 
 DELIMETER;
 echo $product;
+  $item_name++; // Default
+  $item_number++;
+  $amount++;
+  $quantity++;
 
 $_SESSION['item_total'] = $total += $sub_total;
 $_SESSION['total_quantity'] += $value; 
