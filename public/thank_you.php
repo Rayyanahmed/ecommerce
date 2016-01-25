@@ -4,7 +4,7 @@
 
 
     <div class="container">
-
+    	<h1 class="text-center">THANK YOU</h1>
     <div>
 
 
